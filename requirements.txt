@@ -1,0 +1,10 @@
+output_file = '/content/requirements.txt'
+google_drive_path = '/content/drive/MyDrive/requirements.txt'
+
+# Run pip freeze and save output to a temporary file
+!pip freeze > {output_file}
+
+# Move the requirements.txt file to Google Drive
+!mv {output_file} {google_drive_path}
+
+print(f"'requirements.txt' created and saved to Google Drive at: {google_drive_path}")
